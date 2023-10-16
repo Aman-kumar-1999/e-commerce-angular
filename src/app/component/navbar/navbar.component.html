@@ -1,0 +1,116 @@
+<!-- <p>
+    <mat-drawer-container class="navbar-body">
+        <mat-drawer  #drawer mode="side" disableClose="true" opened="true" class="example-sidenav">
+            
+            <mat-card class="">
+               
+                <li class="mat-list-div" *ngFor="let folder of folders">
+                    <a class='link'>
+                <li class="sidebar " data-bs-dismiss="offcanvas" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    role="tab" aria-controls="pills-home" aria-selected="true"> 
+                    <span class='material-symbols-outlined sidebarLogo'>
+                        {{folder.icon}}
+                    </span> 
+                       <span *ngIf="isExpanded">{{folder.name}}</span>
+                </li>
+                </a>
+                </li>
+            
+            </mat-card>
+        </mat-drawer>
+        <div class="">
+            <mat-toolbar class="navbar-main">
+                <button mat-icon-button (click)="isExpanded = !isExpanded" class="example-icon"
+                    aria-label="Example icon-button with menu icon">
+
+                    <mat-icon>list
+                    </mat-icon>
+                </button>
+                <span><img style="width: 50%; height: 50%;" src="../../../assets/eqipped_1.png" /></span>
+                <span><input type="search" /></span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon"
+                    aria-label="Example icon-button with heart icon">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <mat-icon>share</mat-icon>
+                </button>
+
+
+            </mat-toolbar>
+
+        </div>
+        
+        <router-outlet></router-outlet>
+
+
+    </mat-drawer-container>
+
+</p> -->
+
+
+
+<mat-toolbar class="navbar-main">
+    <button *ngIf="isLogin" (click)="isExpanded = !isExpanded" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+
+        <mat-icon>list
+        </mat-icon>
+    </button>
+    <div mat-card-avatar class="">
+        <img class="sidebarImg" src="../../../assets/eqipped_1.png" alt="Photo of a Shiba Inu">
+    </div>
+    <input type="text" class="search-box" placeholder="Search...">
+    <span class="material-symbols-outlined search-icon">search</span>
+    <span class="example-spacer"></span>
+    <!-- <button *ngIf="isLogin" mat-icon-button class="example-icon-cart favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <button *ngIf="isLogin" mat-icon-button class="example-icon-logout" aria-label="Example icon-button with share icon">
+        <mat-icon>notifications </mat-icon>
+    </button>
+    <button *ngIf="isLogin" mat-icon-button class="example-icon-logout" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+    </button> -->
+    <button *ngIf="!isLogin" routerLink="login" mat-icon-button class="example-icon-logout" aria-label="Example icon-button with share icon">
+        <mat-icon>login</mat-icon>
+    </button>
+    <button *ngIf="isLogin" mat-icon-button class="example-icon-logout" aria-label="Example icon-button with share icon">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+
+
+</mat-toolbar>
+
+<mat-drawer-container class="" autosize>
+    <mat-drawer *ngIf="isLogin" #drawer mode="side" disableClose="true" class="sidebar-main" opened="true">
+        <!-- <mat-card>
+            <mat-list>
+                <mat-nav-list class="">
+                    <div *ngFor="let folder of folders">
+                        <a routerLink="#" class="sidebar" data-bs-dismiss="offcanvas" id="nav-home-tab"
+                            data-bs-toggle="tab" data-bs-target="#nav-home" role="tab" aria-controls="pills-home"
+                            aria-selected="true">
+                            <span class='material-symbols-outlined sidebarLogo'>
+                                {{folder.icon}}
+                            </span>
+                            <span *ngIf="isExpanded" class="sidebartext">{{folder.name}}</span>
+                        </a>                        
+                    </div>
+                </mat-nav-list>
+            </mat-list>            
+        </mat-card> -->
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action sidebar-list-hovering" data-bs-toggle="list" [routerLink]="folder.url" role="tab" *ngFor="let folder of folders">
+                <span class='material-symbols-outlined sidebarLogo'>
+                    {{folder.icon}}
+                </span>
+                <span *ngIf="isExpanded" class="sidebartext">{{folder.name}}</span>
+            </li>
+
+        </ul>
+    </mat-drawer>
+    <router-outlet></router-outlet>
+</mat-drawer-container>
