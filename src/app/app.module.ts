@@ -22,6 +22,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { HomeComponent } from './component/home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { HomeCategoryComponent } from './component/home/home-category/home-category.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     LoginComponent,
     FooterComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    HomeCategoryComponent
   ],
   imports: [
     BrowserModule,

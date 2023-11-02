@@ -74,12 +74,33 @@
     <button *ngIf="isLogin" mat-icon-button class="example-icon-logout" aria-label="Example icon-button with share icon">
         <mat-icon>logout</mat-icon>
     </button> -->
-    <button *ngIf="!isLogin" routerLink="login" mat-icon-button class="example-icon-logout" aria-label="Example icon-button with share icon">
+    <button *ngIf="!isLogin" routerLink="login" mat-icon-button class="example-icon-logout"
+        aria-label="Example icon-button with share icon">
         <mat-icon>login</mat-icon>
     </button>
-    <button *ngIf="isLogin" mat-icon-button class="example-icon-logout" aria-label="Example icon-button with share icon">
+    <button [matMenuTriggerFor]="menu" *ngIf="isLogin" mat-icon-button class="example-icon-logout"
+        aria-label="Example icon-button with share icon">
         <mat-icon>account_circle</mat-icon>
     </button>
+
+    <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+    <mat-menu #menu="matMenu">
+        <!-- <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button> -->
+        <button *ngIf="isLogin" mat-menu-item class="example-icon-cart favorite-icon"
+            aria-label="Example icon-button with heart icon">
+            <mat-icon>shopping_cart</mat-icon> Cart
+        </button>
+
+        <button *ngIf="isLogin" mat-menu-item class="example-icon-logout"
+            aria-label="Example icon-button with share icon">
+            <mat-icon>notifications </mat-icon> Notifications
+        </button>
+        <button *ngIf="isLogin" mat-menu-item class="example-icon-logout"
+            aria-label="Example icon-button with share icon">
+            <mat-icon>logout</mat-icon> Logout
+        </button>
+    </mat-menu>
 
 
 </mat-toolbar>
@@ -103,13 +124,13 @@
             </mat-list>            
         </mat-card> -->
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action sidebar-list-hovering" data-bs-toggle="list" [routerLink]="folder.url" role="tab" *ngFor="let folder of folders">
+            <a class="list-group-item list-group-item-action sidebar-list-hovering" data-bs-toggle="list"
+                [routerLink]="folder.url" role="tab" *ngFor="let folder of folders">
                 <span class='material-symbols-outlined sidebarLogo'>
                     {{folder.icon}}
                 </span>
                 <span *ngIf="isExpanded" class="sidebartext">{{folder.name}}</span>
-            </li>
-
+            </a>
         </ul>
     </mat-drawer>
     <router-outlet></router-outlet>

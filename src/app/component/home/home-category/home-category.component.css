@@ -1,0 +1,125 @@
+.link {
+    text-decoration: none;
+    color: rgb(78, 63, 63);
+    display: block;
+    /* background-color: red; */
+    /* margin: 0px; */
+    /* font-size: medium; */
+    font-size: small;
+  }
+  
+  
+  
+  .link:hover {
+    text-decoration: none;
+    color: rgb(185, 88, 8);
+    /* box-shadow: 5px 10px 50px #706e6e; */
+  }
+  
+  .chart {
+    margin-top: 20px;
+  }
+  
+  .plasticWare {
+    /* margin-left: 10px; */
+    /* padding-right: 20px; */
+    /* width: 20px; */
+  }
+  
+  .card-title {
+    /* font-size: small; */
+  }
+  
+  .editProductLink {
+    color: white;
+    background-color: rgb(175, 107, 50);
+    ;
+    padding: 10px;
+    border-radius: 30px;
+  }
+  
+  .editProductLink:hover {
+    color: white;
+    background-color: rgb(133, 89, 53);
+    ;
+    /* padding: 20px;
+      border-radius: 30px; */
+  }
+  
+  .categoryGrid {
+    padding-top: 20px;
+    /* border: 1px solid #65159A; */
+    box-shadow: 5px 10px 10px #706e6e;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 5px;
+    width: 20px;
+    align-items: center;
+    /* width: 126.876px;
+    height: 126.876px; */
+    /* flex-shrink: 0; */
+    /* color: wheat; */
+  
+    background-color: #B9F6CA;
+  
+  }
+  
+  .categoryGrid:hover {
+    /* text-transform: uppercase; */
+    /* color: white; */
+    text-decoration: none;
+    box-shadow: 5px 10px 40px #706e6e;
+  
+    
+    
+    /* border: 1px solid #65159A; */
+    /* background-color: #F44336; */
+  
+  }
+  
+  .categoryGrid p {
+    padding: 10px;
+  }
+  
+  .categoryGrid img:hover {
+    /* background-color: red; */
+    /* padding-top: 5px; */
+  }
+  
+  .categoryResponsive{
+    margin-right: 0px;
+  }
+  .homeSidebar{
+    /* margin-right: 100px; */
+  }
+  
+  @media (max-width: 480px) {
+    .categoryResponsive{
+      margin-right: 200px;
+    }
+    .responsiveCategory{
+     margin-left: 90px;
+    }
+    .categoryGrid{
+      width: 65px;
+      margin-left: 10px;
+      /* z-index: -1; */
+    }
+    .categoryGrid p{
+     margin-left: -13px;
+     align-items: center;
+     text-align: center;
+     justify-content: center;
+     font-size: 12px;
+     
+    }
+    .homeSidebar{
+      
+    }
+    .resposiveMarginTop{
+      margin-top: 10px;
+    }
+    
+  }
+  
